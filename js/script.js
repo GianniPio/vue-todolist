@@ -17,19 +17,38 @@
 var list = new Vue (
     {
         el: '#myList',  /* elemento su cui lavoro */
-        data: {
-            // array di oggetti da stampare
-            items: [
-                {
-                    text: 'Fare la spesa',
-                    done: true,
-                },
+        data: 
+            {
+                task: [
+                    {
+                        text: "",
+                        done: false,
+                    }
+                ],
+                // array di oggetti da stampare
+                items: [
+                    {
+                        text: 'Fare la spesa',
+                        done: true,
+                    },
 
-                {
-                    text: 'Portare il cane fuori',
+                    {
+                        text: 'Portare il cane fuori',
+                        done: false,
+                    },
+                ]
+            },
+
+        methods: 
+        {
+            addNewTask: function(){
+                this.items.push(this.task);
+
+                this.task = {
+                    text: "",
                     done: false,
                 }
-            ]
-        }
+            }
+        },
     }
 )

@@ -11,10 +11,10 @@
 <body>
 
     <div id="myList" class="container">
-        <input type="text" placeholder="Inserisci nuova task">
-        <button>Aggiungi</button>
+        <input type="text" placeholder="Inserisci nuova task" v-model="task.text">
+        <button @click="addNewTask">Aggiungi</button>
         <ul>
-            <li v-for="task in items">{{task.text}}
+            <li v-for="item in items">{{item.text}}
                 <i class="fas fa-check"></i>
                 <i class="fas fa-times"></i>
             </li>
