@@ -16,8 +16,9 @@
 
 var list = new Vue (
     {
-        el: '#myList',
+        el: '#myList',  /* elemento su cui lavoro */
         data: {
+            // array di oggetti da stampare
             items: [
                 {
                     text: 'Fare la spesa',

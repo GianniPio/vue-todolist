@@ -1,7 +1,18 @@
 /* general tags */
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} */
+
+/* list tags */
+
+.fa-check {
+    color: green;
+    padding: 10px;
+}
+
+.fa-times {
+    color: red;
 }
