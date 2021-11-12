@@ -13,3 +13,22 @@
 // 5. Riuscire a cancellare elementi dell'array
 
 // 6. Tramite la proprietà "done", sbarrare il testo
+
+var list = new Vue (
+    {
+        el: '#myList',
+        data: {
+            items: [
+                {
+                    text: 'Fare la spesa',
+                    done: true,
+                },
+
+                {
+                    text: 'Portare il cane fuori',
+                    done: false,
+                }
+            ]
+        }
+    }
+)
