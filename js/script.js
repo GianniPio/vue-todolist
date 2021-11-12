@@ -48,7 +48,14 @@ var list = new Vue (
                     text: "",
                     done: false,
                 }
+            },
+
+            removeTask(index) {
+                
+                this.items.splice(index, 1);
             }
+
+
         },
     }
 )
