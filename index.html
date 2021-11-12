@@ -11,7 +11,7 @@
 <body>
 
     <div id="myList" class="container">
-        <input type="text" placeholder="Inserisci nuova task" v-model="task.text">
+        <input type="text" placeholder="Inserisci nuova task" v-model="task.text" @keyup.enter="addNewTask">
         <button @click="addNewTask">Aggiungi</button>
         <ul>
             <li v-for="item, i in items" :key="i">{{item.text}}
