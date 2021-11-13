@@ -13,12 +13,17 @@
     <div id="myList" class="container">
         <input type="text" placeholder="Inserisci nuova task" v-model="task.text" @keyup.enter="addNewTask">
         <button @click="addNewTask">Aggiungi</button>
-        <ul>
-            <li v-for="item, i in items" :key="i">{{item.text}}
-                <i class="fas fa-check"></i>
+
+        <div v-if="items.length === 0">
+            <span>Non hai nessun task</span> 
+        </div>
+
+        <ul v-else>
+            <li v-for="item, i in items" :key="i">
+                <span :class="{'bar' : item.done}">{{item.text}} </span>
+                <i class="fas fa-check" @click=changeDone(i)></i>
                 <i class="fas fa-times" @click="removeTask(i)"></i>
             </li>
-            
         </ul>
     </div>
 

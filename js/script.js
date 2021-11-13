@@ -41,21 +41,37 @@ var list = new Vue (
 
         methods: 
         {
+            // funzione che aggiunge una nuova task
             addNewTask: function(){
+                
                 this.items.push(this.task);
 
-                this.task = {
+                    this.task = {
                     text: "",
                     done: false,
-                }
+                } 
+                
+        
             },
 
+            // funzione che cancella la task
             removeTask(index) {
                 
                 this.items.splice(index, 1);
+            },
+
+            // funziona che cambia il done
+            changeDone(index){
+                
+                if (this.items[index].done === true) {
+                    // se il done è true, diventa false
+                    this.items[index].done = false;
+
+                } else if(this.items[index].done === false) {
+                    // se il done è false, diventa true
+                    this.items[index].done = true;
+                }
             }
-
-
         },
     }
 )

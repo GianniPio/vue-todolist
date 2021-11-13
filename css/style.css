@@ -16,3 +16,7 @@
 .fa-times {
     color: red;
 }
+
+.bar {
+    text-decoration: line-through;
+}
