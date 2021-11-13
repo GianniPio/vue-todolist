@@ -17,17 +17,27 @@
 
         <h1>TO DO</h1>
 
+        <!-- input ha il valore della task.text dell'array, prende value all'invio e stampa task -->
         <input type="text" placeholder="Inserisci nuova task" v-model="task.text" @keyup.enter="addNewTask">
+
+        <!-- al click prende il valore dell'input e stampa task -->
         <button @click="addNewTask">Aggiungi</button>
 
+        <!-- se il valore dell'array è zero, stampa una stringa -->
         <div v-if="items.length === 0">
             <span>Non hai nessun task</span> 
         </div>
 
+        <!-- altrimenti stampa ul li -->
         <ul v-else>
+            <!-- stampa l'array sottoforma di lista -->
             <li v-for="item, i in items" :key="i">
                 <span :class="{'bar' : item.done}">{{i+1}}. {{item.text}} </span>
+
+                <!-- al click, cambia il valore di done -->
                 <i class="fas fa-check" @click=changeDone(i)></i>
+
+                <!-- al click, rimuove task -->
                 <i class="fas fa-times" @click="removeTask(i)"></i>
             </li>
         </ul>
